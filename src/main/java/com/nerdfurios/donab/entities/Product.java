@@ -20,22 +20,30 @@ public class Product {
 	
 	@Column(name = "product_year")
 	private Integer year;
-	private String genere;
+	private String genre;
 	private String brand;
+	private Double score;
+	private String imgUrl;
+	
+	@Column(columnDefinition = "TEXT")
 	private String shortDescription;
+	
+	@Column(columnDefinition = "TEXT")
 	private String longDescription;
 
 	public Product() {
 
 	}
 
-	public Product(Long id, String title, Integer year, String genere, 
-			String brand,String shortDescription,String longDescription) {
+	public Product(Long id, String title, Integer year, String genre, String brand,Double score,
+			String imgUrl, String shortDescription,String longDescription) {
 		this.id = id;
 		this.title = title;
 		this.year = year;
-		this.genere = genere;
+		this.genre = genre;
 		this.brand = brand;
+		this.score = score;
+		this.imgUrl = imgUrl;
 		this.shortDescription = shortDescription;
 		this.longDescription = longDescription;
 	}
@@ -64,12 +72,12 @@ public class Product {
 		this.year = year;
 	}
 
-	public String getGenere() {
-		return genere;
+	public String getGenre() {
+		return genre;
 	}
 
-	public void setGenere(String genere) {
-		this.genere = genere;
+	public void setGenre(String genre) {
+		this.genre = genre;
 	}
 
 	public String getBrand() {
@@ -78,6 +86,22 @@ public class Product {
 
 	public void setBrand(String brand) {
 		this.brand = brand;
+	}
+	
+	public Double getScore() {
+		return score;
+	}
+
+	public void setScore(Double score) {
+		this.score = score;
+	}
+
+	public String getImgUrl() {
+		return imgUrl;
+	}
+
+	public void setImgUrl(String imgUrl) {
+		this.imgUrl = imgUrl;
 	}
 
 	public String getShortDescription() {
